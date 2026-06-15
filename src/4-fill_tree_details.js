@@ -132,7 +132,7 @@ async function retryUntilSuccess(fn, args, retryDelay = 500) {
         singleItems,
         async (item) => {
           const res = await retryUntilSuccess(get_details, [item.data_unit_id])
-          Object.assign(item, res, { details: true })
+          Object.assign(item, res)
         },
         true
       )
