@@ -95,7 +95,6 @@ function processMultipleItems(tree_data) {
             const max = Math.max(...brs)
             item.br = min === max ? `${min.toFixed(1)}` : `${min.toFixed(1)}-${max.toFixed(1)}`
           }
-          item.details = true
         }
       }
     }

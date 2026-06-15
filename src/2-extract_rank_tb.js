@@ -29,9 +29,7 @@ function parse_single_item($item, is_premium = false) {
     rp: -1,
     sp: 0,
     data_unit_id,
-    selected: false,
-    class_name,
-    details: false,
+    class_name
   };
 }
 
@@ -58,12 +56,10 @@ function parse_multiple_item($group, is_premium = false, $) {
     type: "multiple",
     title,
     vehicle_icon,
-    selected: false,
     br: "",
     data_unit_id,
     class_name,
     items,
-    details: false,
   };
 }
 
@@ -128,7 +124,6 @@ function extract_rank_tb(html, t_c, type = "ground") {
       rank: rank_label,
       researchable_vehicles,
       premium_vehicles,
-      selected: [],
       // unlock_quantity: get_unlock_quantity(t_c, type, rank_label),
       unlock_quantity: 0,
     };

@@ -2,6 +2,18 @@ const axios = require('axios')
 const cheerio = require('cheerio')
 const main_roles = require('@/dict/main_role')
 
+function parseNumber(value) {
+  if (typeof value !== "string") value = String(value ?? "");
+
+  // 去掉千分位逗号
+  const normalized = value.replace(/,/g, "");
+
+  // 只允许纯数字
+  if (!/^\d+$/.test(normalized)) return 0;
+
+  return Number(normalized);
+}
+
 async function request_details(data_unit_id) {
   const url = `https://wiki.warthunder.com/unit/${data_unit_id}`
 
@@ -60,8 +72,8 @@ async function request_details(data_unit_id) {
   const result = {
     data_unit_id,
     br,
-    rp: isPremium ? 0 : rp,
-    sp: isPremium ? 0 : sp,
+    rp: isPremium ? 0 : parseNumber(rp),
+    sp: isPremium ? 0 : parseNumber(sp),
     main_role,
   }
 
