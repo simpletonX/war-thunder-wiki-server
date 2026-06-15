@@ -27,7 +27,9 @@ function parse_single_item($item, is_premium = false) {
     vehicle_icon,
     br: null,
     rp: -1,
+    rp_view: "",
     sp: 0,
+    sp_view: "",
     data_unit_id,
     class_name
   };

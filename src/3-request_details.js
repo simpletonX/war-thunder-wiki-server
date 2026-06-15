@@ -73,7 +73,9 @@ async function request_details(data_unit_id) {
     data_unit_id,
     br,
     rp: isPremium ? 0 : parseNumber(rp),
+    rp_view: isPremium ? 0 : rp,
     sp: isPremium ? 0 : parseNumber(sp),
+    sp_view: isPremium ? 0 : sp,
     main_role,
   }
 
